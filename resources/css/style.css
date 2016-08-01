@@ -1,0 +1,680 @@
+/* ======================= */
+/*       Basci Setup       */
+/* ======================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 20px; /* My browser default font size: 20px */
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+/* ======================= */
+/*   Reusable Components   */
+/* ======================= */
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.box {
+    padding: 1%;
+}
+
+/* ------- Headings ------- */
+h1,
+h2,
+h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 2.2rem;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.7rem;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h2:after {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: "";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* ------- Paragraphs ------- */
+
+.long-copy {
+    line-height: 1.45;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.box p {
+    font-size: .88rem;
+    line-height: 1.45;
+}
+
+/* ------- Icons ------- */
+.icon-big {
+    font-size: 3.3rem;
+    display: block;
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+.icon-small {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    color: #e67e22;
+    font-size: 1.2rem;
+    margin-right: 10px;
+
+    /* Secrets to alighn text and icons */
+    line-height: 1.2;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+
+/* ------- Links ------- */
+
+a:link,
+a:visited {
+    color: #e67e22;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #e78e22;
+    -webkit-transition: border-bottom .2s, color .2s;
+    transition: border-bottom .2s, color .2s;
+}
+
+a:hover,
+a:active {
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
+/* ------- Buttons ------- */
+
+/* a:link for link in the normal state */
+.btn:link,
+.btn:visited,
+input[type="submit"] {
+    /* Set common button style */
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+
+    -webkit-transition: background-color .2s,
+                border .2s,
+                color .2s;
+
+    transition: background-color .2s,
+                border .2s,
+                color .2s;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type="submit"] {
+    /* FlatUI color */
+    background-color: #e67e22;
+
+    /* Due to "box-sizing: border-box;", so add border to make
+    the .btn-full has same height as the .btn-ghost*/
+    border: 1px solid #e67e22;
+    color: #fff;
+
+    margin-right: 15px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #e67e22;
+    color: #e67e22;
+}
+
+.btn:hover,
+.btn:active,
+input[type="submit"]:hover,
+input[type="submit"]:active {
+    background-color: #cf6d17;
+}
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #cf6d17;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #cf6d17;
+    color: #fff;
+}
+
+
+/* ======================= */
+/*   Section 0 - Header    */
+/* ======================= */
+
+header {
+    /* Put text on image: make image darker with linear-gradient() */
+    background-image: -webkit-linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(img/hero-min.jpg);
+    background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(img/hero-min.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    /* Make image as high as the browser viewport */
+    height: 100vh;
+}
+
+.hero-text-box {
+    /* Make a vertically, horizontally centered box */
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 1rem;
+}
+
+.logo-black {
+    display: none;
+    height: 50px;
+    width: auto;
+    float: left;
+    margin: .25rem 0;
+}
+
+/* ------- Main Navigation ------- */
+
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 2.7rem;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .9rem;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom .2s;
+    transition: border-bottom .2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #e67e22;
+}
+
+/* ------- Mobile Navigation (Responsive) ------- */
+.mobile-nav-icon {
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-nav-icon i {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+
+/* ------- Sticky Navigation ------- */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .98);
+    box-shadow: 0 2px 2px #efefef;
+    z-index: 999;
+}
+
+.sticky .main-nav {
+    margin-top: .9rem;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    padding: 16px 0;
+    color: #555;
+}
+
+.sticky .logo {
+    display: none;
+}
+.sticky .logo-black {
+    display: block;
+}
+
+
+/* ======================= */
+/*  Section 1 - Features   */
+/* ======================= */
+
+.section-features .long-copy {
+    margin-bottom: 30px;
+}
+
+/* ======================= */
+/*    Section 2 - Meals    */
+/* ======================= */
+.section-meals {
+    padding: 0;
+}
+
+.meals-showcase {
+    list-style: none;
+    width: 100%;
+}
+
+.meals-showcase li {
+    display: block;
+    float: left;
+    width: 25%;
+}
+
+.meal-photo {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.meal-photo img {
+    opacity: .7;
+    width: 100%;
+    height: auto;
+
+    -webkit-transform: scale(1.15);
+
+            transform: scale(1.15); /**/
+    -webkit-transition: opacity .5s, -webkit-transform .5s;
+    transition: opacity .5s, -webkit-transform .5s;
+    transition: transform .5s, opacity .5s;
+    transition: transform .5s, opacity .5s, -webkit-transform .5s;
+}
+
+.meal-photo img:hover {
+    opacity: 1;
+    -webkit-transform: scale(1.04);
+            transform: scale(1.04);
+}
+
+/* ======================== */
+/* Section 3 - How it works */
+/* ======================== */
+
+.section-steps {
+    background-color: #f4f4f4;
+}
+
+.steps-box {
+    margin-top: 30px;
+}
+
+.steps-box:first-child {
+    text-align: right;
+    padding-right: 3%;
+}
+
+.steps-box:last-child {
+    padding-left: 3%;
+    margin-top: 70px;
+}
+
+.app-screen {
+    width: 40%;
+}
+
+.works-step {
+    margin-bottom: 2.5rem;
+}
+
+.works-step:last-of-type {
+    margin-bottom: 80px;
+}
+
+.works-step div {
+    color: #e67e22;
+    border: 2px solid #e67e22;
+    display: inline-block;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    padding: 5px;
+    float: left;
+    font-size: 1.5rem;
+    margin-right: 25px;
+}
+
+.btn-app:link,
+.btn-app:visited {
+    border: 0;
+}
+
+.btn-app img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* ======================== */
+/*    Section 4 - Cities    */
+/* ======================== */
+
+.box img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.city-feature {
+    margin-bottom: 5px;
+}
+
+/* ======================================= */
+/*    Section 5 - Customer Testimonials    */
+/* ======================================= */
+
+.section-testimonials {
+    background-image: -webkit-linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url(img/back-customers-min.jpg);
+    background-image: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url(img/back-customers-min.jpg);
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+}
+
+blockquote {
+    padding: 2%;
+    font-style: italic;
+    line-height: 1.45;
+    position: relative;
+    margin-top: 50px;
+}
+
+blockquote:before {
+    content: "\201C";
+    font-size: 5rem;
+    display: block;
+    position: absolute;
+    top: -65px;
+    left: -5px;
+}
+
+cite {
+    font-size: .9rem;
+    margin-top: 25px;
+    display: block;
+}
+
+cite img {
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* ======================================= */
+/*     Section 6 - Sign Up and Pricing     */
+/* ======================================= */
+
+.section-plans {
+     background-color: #f4f4f4;
+}
+
+.plan-box {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
+    box-shadow: 0 2px 2px #efefef;
+}
+
+.plan-box div {
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.plan-box div:first-child {
+    background-color: #fcfcfc;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.plan-box div:last-child {
+    text-align: center;
+    border: 0;
+}
+
+.plan-price {
+     font-size: 3rem;
+     margin-bottom: 10px;
+     font-weight: 100;
+     color: #e67e22;
+}
+
+.plan-price span {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.plan-price-meal {
+    font-size: .8rem;
+}
+
+.plan-box ul {
+    list-style: none;
+}
+
+.plan-box ul li {
+    padding: 5px 0;
+}
+
+/* ======================================= */
+/*        Section 7 - Contact Form         */
+/* ======================================= */
+
+.contact-form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type="checkbox"] {
+    margin: 10px 5px  10px 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+/* ======================================= */
+/*            Section 8 - Footer           */
+/* ======================================= */
+
+footer {
+    background-color: #333;
+    padding: 50px;
+    font-size: .8rem;
+}
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+.social-links {
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li,
+.social-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child {
+    margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+    text-decoration: none;
+    border: 0;
+    color: #888;
+    -webkit-transition: color .2s;
+    transition: color .2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+    color: #ddd;
+}
+
+.social-links li a {
+    font-size: 1.2rem;
+}
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram {
+    -webkit-transition: color .2s;
+    transition: color .2s;
+}
+
+.ion-social-facebook:hover {
+    color: #3b5998;
+}
+
+.ion-social-twitter:hover {
+    color: #55acee;
+}
+
+.ion-social-googleplus:hover {
+    color: #dd4b39;
+}
+
+.ion-social-instagram:hover {
+    color: #125688;
+}
+
+
+
+footer p {
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* ======================= */
+/*   Animations on Scroll  */
+/* ======================= */
+
+.js--wp-1,
+.js--wp-2,
+.js--wp-3  {
+    opacity: 0;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+}
+
+.js--wp-4 {
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+}
+
+.js--wp-1.animated,
+.js--wp-2.animated,
+.js--wp-3.animated {
+    opacity: 1;
+}
