@@ -30,6 +30,8 @@ body {
     height: 0;
     visibility: hidden;
 }
+
+
 /* ======================= */
 /*   Reusable Components   */
 /* ======================= */
@@ -53,7 +55,6 @@ h2,
 h3 {
     font-weight: 300;
     text-transform: uppercase;
-
 }
 
 h1 {
@@ -89,7 +90,6 @@ h3 {
 }
 
 /* ------- Paragraphs ------- */
-
 .long-copy {
     line-height: 1.45;
     width: 70%;
@@ -117,14 +117,13 @@ h3 {
     font-size: 1.2rem;
     margin-right: 10px;
 
-    /* Secrets to alighn text and icons */
+    /* Secrets to align text and icons */
     line-height: 1.2;
     vertical-align: middle;
     margin-top: -5px;
 }
 
 /* ------- Links ------- */
-
 a:link,
 a:visited {
     color: #e67e22;
@@ -142,7 +141,6 @@ a:active {
 }
 
 /* ------- Buttons ------- */
-
 /* a:link for link in the normal state */
 .btn:link,
 .btn:visited,
@@ -244,7 +242,6 @@ header {
 }
 
 /* ------- Main Navigation ------- */
-
 .main-nav {
     float: right;
     list-style: none;
@@ -288,7 +285,6 @@ header {
 
 
 /* ------- Sticky Navigation ------- */
-
 .sticky {
     position: fixed;
     top: 0;
@@ -325,9 +321,11 @@ header {
     margin-bottom: 30px;
 }
 
+
 /* ======================= */
 /*    Section 2 - Meals    */
 /* ======================= */
+
 .section-meals {
     padding: 0;
 }
@@ -356,19 +354,20 @@ header {
     height: auto;
 
     -webkit-transform: scale(1.15);
-
-            transform: scale(1.15); /**/
+            transform: scale(1.15);
     -webkit-transition: opacity .5s, -webkit-transform .5s;
     transition: opacity .5s, -webkit-transform .5s;
     transition: transform .5s, opacity .5s;
     transition: transform .5s, opacity .5s, -webkit-transform .5s;
 }
 
+/* Zoom-in/out effects in CSS transition */
 .meal-photo img:hover {
     opacity: 1;
     -webkit-transform: scale(1.04);
             transform: scale(1.04);
 }
+
 
 /* ======================== */
 /* Section 3 - How it works */
@@ -429,6 +428,7 @@ header {
     margin-right: 10px;
 }
 
+
 /* ======================== */
 /*    Section 4 - Cities    */
 /* ======================== */
@@ -442,6 +442,7 @@ header {
 .city-feature {
     margin-bottom: 5px;
 }
+
 
 /* ======================================= */
 /*    Section 5 - Customer Testimonials    */
@@ -484,6 +485,7 @@ cite img {
     margin-right: 10px;
     vertical-align: middle;
 }
+
 
 /* ======================================= */
 /*     Section 6 - Sign Up and Pricing     */
@@ -541,12 +543,13 @@ cite img {
     padding: 5px 0;
 }
 
+
 /* ======================================= */
 /*        Section 7 - Contact Form         */
 /* ======================================= */
 
 .contact-form {
-    width: 60%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -571,6 +574,31 @@ input[type="checkbox"] {
 *:focus {
     outline: none;
 }
+
+.map-box {
+    width: 100%;
+    height: 560px;
+    position: relative;
+}
+
+.map {
+    width: 100%;
+    height: 560px;
+    position: relative;
+    z-index: 0;
+}
+
+.form-box {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255,255,255,.8);
+    z-index: 10;
+    height: 560px;
+    padding-top: 40px;
+}
+
 
 /* ======================================= */
 /*            Section 8 - Footer           */
@@ -646,8 +674,6 @@ footer {
 .ion-social-instagram:hover {
     color: #125688;
 }
-
-
 
 footer p {
     color: #888;

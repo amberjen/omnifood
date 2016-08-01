@@ -12,7 +12,7 @@ $(document).ready(function(){
         offset: '60px;'
     });
 
-    /* Scrolling Effect (Scroll on buttons) */
+    /* Scroll Effect (on clicking buttons) */
     /*
        1. .animate({param}, speed, callback)
             param(required): defined the CSS properties to be animated
@@ -34,6 +34,7 @@ $(document).ready(function(){
     });
 
     /* Navigation Scroll (Smooth Scrolling) */
+    /* Code snippets from CSS-Tricks */
     $(function() {
       $('a[href*="#"]:not([href="#"])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -49,7 +50,7 @@ $(document).ready(function(){
       });
     });
 
-    /* Scroll Animation (Animations on scroll) */
+    /* Scroll Animation (Animation on scroll) */
     $('.js--wp-1').waypoint(function(direction){
         $('.js--wp-1').addClass('animated fadeIn');
     }, {
@@ -88,9 +89,23 @@ $(document).ready(function(){
             icon.addClass('ion-navicon-round');
             icon.removeClass('ion-close-round');
         }
+    });
 
+    /* Maps */
+    var map = new GMaps({
+      div: '.map',
+      lat: 37.7679929,
+      lng: -122.3237909,
+      zoom: 12 /* Default: 15 */
+    });
 
-
+    map.addMarker({
+      lat: 37.7867083,
+      lng: -122.402094,
+      title: 'Lima',
+      infoWindow: {
+          content: '<p>Our San Franciso HQ</p>'
+      }
     });
 
 
